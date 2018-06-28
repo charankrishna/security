@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
-var port = process.env.port || 3000;
+
 //connect to MongoDB
 mongoose.connect('mongodb://ckonline:charan23!@ds121321.mlab.com:21321/user');
 var db = mongoose.connection;
@@ -54,6 +54,6 @@ app.use(function (err, req, res, next) {
 
 
 // listen on port 3000
-app.listen(port, function () {
+app.listen(process.env.port, function () {
     console.log('Express app listening on port 3000');
 });
