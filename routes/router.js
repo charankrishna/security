@@ -29,7 +29,7 @@ router.post('/', function (req, res, next) {
             username: req.body.username,
             password: req.body.password,
             passwordConf: req.body.passwordConf,
-        }
+        };
 
         User.create(userData, function (error, user) {
             if (error) {
@@ -43,7 +43,7 @@ router.post('/', function (req, res, next) {
     } else if (req.body.logemail && req.body.logpassword) {
         User.authenticate(req.body.logemail, req.body.logpassword, function (error, user) {
             if (error || !user) {
-                var err = new Error('Wrong email or password.');
+                let err = new Error('Wrong email or password.');
                 err.status = 401;
                 return next(err);
             } else {
@@ -56,7 +56,7 @@ router.post('/', function (req, res, next) {
         err.status = 400;
         return next(err);
     }
-})
+});
 
 // GET route after registering
 router.get('/profile', function (req, res, next) {
@@ -66,7 +66,7 @@ router.get('/profile', function (req, res, next) {
                 return next(error);
             } else {
                 if (user === null) {
-                    var err = new Error('Not authorized! Go back!');
+                    let err = new Error('Not authorized! Go back!');
                     err.status = 400;
                     return next(err);
                 } else {
