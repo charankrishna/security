@@ -1,5 +1,5 @@
 # security
 Basic login app with hashing and session functionality.
-installation clone the repo 
+installation clone the repo. 
 npm install
-change mongoosedb to your uesrname and password in app.js
+change mongoosedb to your uesrname and password in app.js.
